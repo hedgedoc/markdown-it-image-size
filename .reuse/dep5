@@ -1,0 +1,4 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: markdown-it-image-size
+Upstream-Contact: The HedgeDoc developers <license@hedgedoc.org>
+Source: https://github.com/hedgedoc/markdown-it-image-size
