@@ -4,77 +4,58 @@ SPDX-FileCopyrightText: 2020 The HedgeDoc developers (see AUTHORS file)
 SPDX-License-Identifier: CC0-1.0
 -->
 
-# markdown-it-image-size
-
-Typescript port of [markdown-it-image-size](https://github.com/hedgedoc/markdown-it-image-size) markdown-it plugin for generating Github style task-lists.
-
-## What it does
-
-- Builds [task/todo lists](https://github.com/blog/1825-task-lists-in-all-markdown-documents) out of markdown lists with items starting with `[ ]` or `[x]`.
-- Nothing else
-
-### Why is this useful?
-
-When you have markdown documentation with checklists, rendering HTML checkboxes
-out of the list items looks nicer than the raw square brackets.
+# markdown-it-imsize
+> A markdown-it plugin for size-specified image markups. This plugin overloads original image renderer of markdown-it.
+> This is a typescript port of https://github.com/tatsy/markdown-it-imsize without the local file system support.
 
 ## Usage
 
-Use it the same as a normal markdown-it plugin:
+#### Enable plugin
 
-```ts
-import MarkdownIt from 'markdown-it'
-import taskLists from '@hedgedoc/markdown-it-task-lists'
-
-const parser = new MarkdownIt().use(taskLists)
-
-const result = parser.render(`
-- [ ] Open task
-- [x] Done task
-- Not a task
-`) // markdown string containing task list items
+```js
+var md = require('markdown-it')({
+  html: true,
+  linkify: true,
+  typography: true
+}).use(require('markdown-it-imsize')); // <-- this use(package_name) is required
 ```
 
-The rendered checkboxes are disabled; to change this, set `enabled` property of the
-plugin options to `true`:
+#### Example
 
-```ts
-const parser = new MarkdownIt().use(taskLists, { enabled: true })
+```md
+![test](image.png =100x200)
 ```
 
-If you need to know which line in the markdown document the generated checkbox comes
-set the `lineNumber` property of the plugin options to `true` for the
-`<input>` tag to be created with a data-line attribute containing the line number:
+is interpreted as
 
-```ts
-const parser = new MarkdownIt().use(taskLists, { lineNumber: true })
+```html
+<p><img src="image.png" alt="test" width="100" height="200"></p>
 ```
 
-If you'd like to wrap the rendered list items in a `<label>` element for UX
-purposes, set the `label` property of the plugin options to `true`:
+## Options
 
-```ts
-const parser = new MarkdownIt().use(taskLists, { label: true })
+#### Auto fill
+
+```js
+var md = require('markdown-it')({
+  html: true,
+  linkify: true,
+  typography: true
+}).use(require('markdown-it-imsize'), { autofill: true });
 ```
 
-To add the label after the checkbox set the `labelAfter` property of the plugin
-options to `true`:
+will fill the width and height fields automatically if the specified image path is valid.
 
-```ts
-const parser = new MarkdownIt().use(taskLists, { label: true, labelAfter: true })
+Therefore,
+
+```md
+![test](image.png)
 ```
 
-**Note:** This option does require the `label` option to be truthy.
+is interpreted as
 
-The options can be combined, of course.
-
-## Tests
-
-```sh
-yarn install
-yarn test
+```html
+<p><img src="image.png" alt="test" width="200" height="200"></p>
 ```
 
-## License
-
-ISC
+where ```image.png``` is a valid path and its size is 200 x 200.
