@@ -15,7 +15,7 @@
     "test": "jest",
     "build": "tsc",
     "prepublish": "tsc",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint src --ext .ts"
   },
   "keywords": ["markdown", "markdown-it", "image size"],
   "author": "The HedgeDoc developers",
