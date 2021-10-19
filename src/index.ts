@@ -33,7 +33,7 @@ function createImageToken (state: StateInline, labelStartIndex: number, labelEnd
   const token = state.push('image', 'img', 0)
   token.children = []
 
-  var newState = new state.md.inline.State(
+  let newState = new state.md.inline.State(
     state.src.slice(labelStartIndex, labelEndIndex),
     state.md,
     state.env,
@@ -102,7 +102,7 @@ function parseLink (state: StateInline, startPosition: number): ParseLinkResult 
 }
 
 const imageWithSize: ParserInline.RuleInline = (state, silent) => {
-  var
+  let
     position,
     title,
     start,
