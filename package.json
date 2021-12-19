@@ -1,6 +1,6 @@
 {
   "name": "@hedgedoc/markdown-it-image-size",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A markdown-it plugin add image sizes ported to typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,11 @@
     "prepublish": "tsc",
     "lint": "eslint src --ext .ts"
   },
-  "keywords": ["markdown", "markdown-it", "image size"],
+  "keywords": [
+    "markdown",
+    "markdown-it",
+    "image size"
+  ],
   "author": "The HedgeDoc developers",
   "license": "AGPL-3.0",
   "jest": {
@@ -37,9 +41,9 @@
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@types/markdown-it": "^12.2.1",
-    "eslint": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
     "jest": "^27.1.0",
     "markdown-it": "^12.2.0",
     "ts-jest": "^27.0.5",
