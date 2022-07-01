@@ -24,20 +24,6 @@
   ],
   "author": "The HedgeDoc developers",
   "license": "AGPL-3.0",
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "testPathIgnorePatterns": [
-      "/dist/"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ]
-  },
   "peerDependencies": {
     "markdown-it": ">=12"
   },
