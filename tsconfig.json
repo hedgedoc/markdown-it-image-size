@@ -17,7 +17,7 @@
     "outDir": "dist",
     "allowJs": true
   },
-  "files": [
-    "src/index.ts"
+  "include": [
+    "src"
   ]
 }
