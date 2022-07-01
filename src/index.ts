@@ -11,7 +11,10 @@ import { ParseImageSize, parseImageSize } from './parse-image-size'
 import { SpecialCharacters } from './specialCharacters'
 
 const checkForImageTagStart = (state: StateInline): boolean => {
-  return (state.src.charCodeAt(state.pos) === SpecialCharacters.EXCLAMATION_MARK && state.src.charCodeAt(state.pos + 1) === SpecialCharacters.OPENING_BRACKET)
+  return (
+    state.src.charCodeAt(state.pos) === SpecialCharacters.EXCLAMATION_MARK &&
+    state.src.charCodeAt(state.pos + 1) === SpecialCharacters.OPENING_BRACKET
+  )
 }
 
 const skipWhiteSpaces = (startPosition: number, state: StateInline): number => {
@@ -26,7 +29,15 @@ const skipWhiteSpaces = (startPosition: number, state: StateInline): number => {
   return position
 }
 
-function createImageToken (state: StateInline, labelStartIndex: number, labelEndIndex: number, href: string, title: string, width: string, height: string) {
+function createImageToken(
+  state: StateInline,
+  labelStartIndex: number,
+  labelEndIndex: number,
+  href: string,
+  title: string,
+  width: string,
+  height: string
+) {
   state.pos = labelStartIndex
   state.posMax = labelEndIndex
 
@@ -57,7 +68,7 @@ function createImageToken (state: StateInline, labelStartIndex: number, labelEnd
   }
 }
 
-function parseSizeParameters (startPosition: number, state: StateInline): ParseImageSize | undefined {
+function parseSizeParameters(startPosition: number, state: StateInline): ParseImageSize | undefined {
   // [link](  <href>  "title" =WxH  )
   //                          ^^^^ parsing image size
   if (startPosition - 1 < 0) {
@@ -82,13 +93,13 @@ function parseSizeParameters (startPosition: number, state: StateInline): ParseI
 }
 
 export interface ParseLinkResult {
-  position: number,
+  position: number
   href: string
 }
 
 // [link](  <href>  "title"  )
 //          ^^^^^^ parsing link destination
-function parseLink (state: StateInline, startPosition: number): ParseLinkResult | undefined {
+function parseLink(state: StateInline, startPosition: number): ParseLinkResult | undefined {
   const linkParseResult = state.md.helpers.parseLinkDestination(state.src, startPosition, state.posMax)
   if (!linkParseResult.ok) {
     return
@@ -102,15 +113,13 @@ function parseLink (state: StateInline, startPosition: number): ParseLinkResult 
 }
 
 const imageWithSize: ParserInline.RuleInline = (state, silent) => {
-  let
-    position,
+  let position,
     title,
     start,
     href = '',
     width = '',
     height = ''
-  const
-    oldPos = state.pos,
+  const oldPos = state.pos,
     max = state.posMax
 
   if (!checkForImageTagStart(state)) {
@@ -172,12 +181,11 @@ const imageWithSize: ParserInline.RuleInline = (state, silent) => {
       height = parseSizeParametersResult.height
     }
 
-    if (position >= max || state.src.charCodeAt(position) !== 0x29/* ) */) {
+    if (position >= max || state.src.charCodeAt(position) !== 0x29 /* ) */) {
       state.pos = oldPos
       return false
     }
     position += 1
-
   } else {
     //
     // Link reference
@@ -190,13 +198,13 @@ const imageWithSize: ParserInline.RuleInline = (state, silent) => {
     //      ^^ optional whitespace (can include newlines)
     position = skipWhiteSpaces(position, state)
 
-    let label;
+    let label
 
-    if (position < max && state.src.charCodeAt(position) === 0x5B/* [ */) {
+    if (position < max && state.src.charCodeAt(position) === 0x5b /* [ */) {
       start = position + 1
       position = state.md.helpers.parseLinkLabel(state, position)
       if (position >= 0) {
-        label = state.src.slice(start, position += 1)
+        label = state.src.slice(start, (position += 1))
       } else {
         position = labelEndIndex + 1
       }
