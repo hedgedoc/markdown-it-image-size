@@ -2,7 +2,9 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 
-.idea/
 dist/
 node_modules/
-*.iml
+
+# IDE
+.idea
+!.idea/copyright
