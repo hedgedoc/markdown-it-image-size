@@ -14,7 +14,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "prepublish": "tsc",
+    "prepublish": "rm -rf dist && yarn lint && yarn build && yarn test",
     "lint": "eslint --ext .ts src",
     "lint:fix": "eslint --fix --ext .ts src"
   },
