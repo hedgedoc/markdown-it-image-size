@@ -5,6 +5,19 @@
 dist/
 node_modules/
 
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# package manager
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # IDE
 .idea
 !.idea/copyright
