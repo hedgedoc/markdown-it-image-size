@@ -38,6 +38,9 @@
       "js"
     ]
   },
+  "peerDependencies": {
+    "markdown-it": ">=12"
+  },
   "devDependencies": {
     "@types/jest": "28.1.4",
     "@types/markdown-it": "12.2.3",
