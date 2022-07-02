@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2021 The HedgeDoc developers (see AUTHORS file)
+ * SPDX-FileCopyrightText: 2022 The HedgeDoc developers (see AUTHORS file)
  *
  * SPDX-License-Identifier: AGPL-3.0-only
  */
@@ -7,21 +7,21 @@
 import { SpecialCharacters } from './specialCharacters'
 
 export interface ParseImageSize {
-  position: number,
-  width: string,
+  position: number
+  width: string
   height: string
 }
 
 export interface ParseNextNumber {
-  position: number,
+  position: number
   value: string
 }
 
-function isCharacterADigit (code: number) {
+function isCharacterADigit(code: number) {
   return code >= SpecialCharacters.NUMBER_ZERO && code <= SpecialCharacters.NUMBER_NINE
 }
 
-function findNextNotNumberCharacter (startPosition: number, maximalPosition: number, content: string): number {
+function findNextNotNumberCharacter(startPosition: number, maximalPosition: number, content: string): number {
   for (let position = startPosition; position < maximalPosition; position += 1) {
     const code = content.charCodeAt(position)
     if (!isCharacterADigit(code) && code !== SpecialCharacters.PERCENTAGE) {
@@ -32,7 +32,7 @@ function findNextNotNumberCharacter (startPosition: number, maximalPosition: num
   return maximalPosition
 }
 
-function parseNextNumber (content: string, startPosition: number, maximalPosition: number): ParseNextNumber {
+function parseNextNumber(content: string, startPosition: number, maximalPosition: number): ParseNextNumber {
   const endCharacterIndex = findNextNotNumberCharacter(startPosition, maximalPosition, content)
 
   return {
@@ -48,10 +48,17 @@ function parseNextNumber (content: string, startPosition: number, maximalPositio
  (3) =x200
 */
 const checkImageSizeStart = (code: number): boolean => {
-  return code === SpecialCharacters.LOWER_CASE_X || (code >= SpecialCharacters.NUMBER_ZERO && code <= SpecialCharacters.NUMBER_NINE)
+  return (
+    code === SpecialCharacters.LOWER_CASE_X ||
+    (code >= SpecialCharacters.NUMBER_ZERO && code <= SpecialCharacters.NUMBER_NINE)
+  )
 }
 
-export function parseImageSize (imageSize: string, startCharacterPosition: number, maximalCharacterPosition: number): ParseImageSize | undefined {
+export function parseImageSize(
+  imageSize: string,
+  startCharacterPosition: number,
+  maximalCharacterPosition: number
+): ParseImageSize | undefined {
   if (startCharacterPosition >= maximalCharacterPosition) {
     return
   }
@@ -86,6 +93,6 @@ export function parseImageSize (imageSize: string, startCharacterPosition: numbe
   return {
     width: width.value,
     height: height.value,
-    position: currentCharacterPosition,
+    position: currentCharacterPosition
   }
 }

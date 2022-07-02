@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "esnext"
@@ -17,8 +17,7 @@
     "outDir": "dist",
     "allowJs": true
   },
-  "include": ["src"],
-  "files": [
-    "src/index.ts"
+  "include": [
+    "src"
   ]
 }
