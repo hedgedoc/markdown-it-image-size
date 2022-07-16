@@ -425,10 +425,10 @@ __metadata:
     eslint-config-prettier: 8.5.0
     eslint-plugin-jest: 26.5.3
     eslint-plugin-prettier: 4.2.1
-    jest: 28.1.2
+    jest: 28.1.3
     markdown-it: 13.0.1
     prettier: 2.7.1
-    ts-jest: 28.0.5
+    ts-jest: 28.0.6
     typescript: 4.7.4
   peerDependencies:
     markdown-it: ">=12"
@@ -487,7 +487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/core@npm:^28.1.2, @jest/core@npm:^28.1.3":
+"@jest/core@npm:^28.1.3":
   version: 28.1.3
   resolution: "@jest/core@npm:28.1.3"
   dependencies:
@@ -690,7 +690,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/types@npm:28.1.3, @jest/types@npm:^28.1.1, @jest/types@npm:^28.1.3":
+"@jest/types@npm:28.1.3, @jest/types@npm:^28.1.3":
   version: 28.1.3
   resolution: "@jest/types@npm:28.1.3"
   dependencies:
@@ -2616,7 +2616,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-cli@npm:^28.1.2":
+"jest-cli@npm:^28.1.3":
   version: 28.1.3
   resolution: "jest-cli@npm:28.1.3"
   dependencies:
@@ -2999,14 +2999,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:28.1.2":
-  version: 28.1.2
-  resolution: "jest@npm:28.1.2"
+"jest@npm:28.1.3":
+  version: 28.1.3
+  resolution: "jest@npm:28.1.3"
   dependencies:
-    "@jest/core": ^28.1.2
-    "@jest/types": ^28.1.1
+    "@jest/core": ^28.1.3
+    "@jest/types": ^28.1.3
     import-local: ^3.0.2
-    jest-cli: ^28.1.2
+    jest-cli: ^28.1.3
   peerDependencies:
     node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
   peerDependenciesMeta:
@@ -3014,7 +3014,7 @@ __metadata:
       optional: true
   bin:
     jest: bin/jest.js
-  checksum: 8ad37088c42cd5a6decb54c61dfe6a45131a50dfe4c805aef1228cae4ca91b0fc7dfe2991ea771d88118151f5f1697d113b6f45c9b0d88b2ece2aac229e77150
+  checksum: b9dcb542eb7c16261c281cdc2bf37155dbb3f1205bae0b567f05051db362c85ddd4b765f126591efb88f6d298eb10336d0aa6c7d5373b4d53f918137a9a70182
   languageName: node
   linkType: hard
 
@@ -4151,9 +4151,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:28.0.5":
-  version: 28.0.5
-  resolution: "ts-jest@npm:28.0.5"
+"ts-jest@npm:28.0.6":
+  version: 28.0.6
+  resolution: "ts-jest@npm:28.0.6"
   dependencies:
     bs-logger: 0.x
     fast-json-stable-stringify: 2.x
@@ -4165,6 +4165,7 @@ __metadata:
     yargs-parser: ^21.0.1
   peerDependencies:
     "@babel/core": ">=7.0.0-beta.0 <8"
+    "@jest/types": ^28.0.0
     babel-jest: ^28.0.0
     jest: ^28.0.0
     typescript: ">=4.3"
@@ -4177,7 +4178,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: 53e05db5b7e1e4f4137c47594f902f5caf585ebc73dda67c4552c1ed784d4fde532c5693a61d877d9462290c7965233c2124050b0f00fd4c85cde9bb1a51c974
+  checksum: 76f3c7a5a81bc757eb38f4d3be7c255e4fc6107abd8da84134908c867b5a9505af1d8591c77115d719176a52856e4adf04278df384e0a113a7ce60fed8be1f41
   languageName: node
   linkType: hard
 
