@@ -54,5 +54,5 @@
     "url": "https://github.com/hedgedoc/markdown-it-image-size/issues"
   },
   "homepage": "https://github.com/hedgedoc/markdown-it-image-size#readme",
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.2.2"
 }
