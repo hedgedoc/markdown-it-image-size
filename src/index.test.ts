@@ -6,7 +6,7 @@
 
 import MarkdownIt from 'markdown-it/lib'
 
-import { imageSize } from './index.js'
+import { imageSize } from '../src/index.js'
 import { describe, expect, it } from '@jest/globals'
 
 describe('markdown-it-imsize', function () {
