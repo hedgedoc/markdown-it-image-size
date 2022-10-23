@@ -1,7 +1,7 @@
 {
   "name" : "@hedgedoc/markdown-it-image-size",
   "type" : "module",
-  "version" : "2.0.1",
+  "version" : "2.0.2",
   "description" : "A markdown-it plugin add image sizes ported to typescript",
   "source" : "src/index.ts",
   "main" : "dist/index.js",
