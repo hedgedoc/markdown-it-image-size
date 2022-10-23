@@ -5,10 +5,10 @@
  */
 
 import MarkdownIt from 'markdown-it'
-import ParserInline from 'markdown-it/lib/parser_inline'
-import StateInline from 'markdown-it/lib/rules_inline/state_inline'
-import { ParseImageSize, parseImageSize } from './parse-image-size'
-import { SpecialCharacters } from './specialCharacters'
+import ParserInline from 'markdown-it/lib/parser_inline.js'
+import StateInline from 'markdown-it/lib/rules_inline/state_inline.js'
+import { ParseImageSize, parseImageSize } from './parse-image-size.js'
+import { SpecialCharacters } from './specialCharacters.js'
 
 const checkForImageTagStart = (state: StateInline): boolean => {
   return (

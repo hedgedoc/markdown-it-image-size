@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: AGPL-3.0-only
  */
 
-import { SpecialCharacters } from './specialCharacters'
+import { SpecialCharacters } from './specialCharacters.js'
 
 export interface ParseImageSize {
   position: number
