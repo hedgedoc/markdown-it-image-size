@@ -4,6 +4,10 @@ SPDX-FileCopyrightText: 2020 The HedgeDoc developers (see AUTHORS file)
 SPDX-License-Identifier: CC0-1.0
 -->
 
+# DEPRECATED
+
+Use https://github.com/hedgedoc/markdown-it-plugins instead
+
 # markdown-it-imsize
 > A markdown-it plugin for size-specified image markups. This plugin overloads original image renderer of markdown-it.
 > This is a typescript port of https://github.com/tatsy/markdown-it-imsize without the local file system support.
